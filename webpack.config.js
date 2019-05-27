@@ -4,8 +4,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
-  mode: 'development',
-  devtool: 'cheap-module-eval-source-map',
+  mode: 'production',
+  devtool: 'cheap-module-source-map',
   entry: {
     main: './src/index.js',
   },
@@ -67,9 +67,10 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new webpack.HotModuleReplacementPlugin(),
   ],
-  optimization: {
-    usedExports: true,
-  },
+  // optimization: {
+  //   // 若要在開發環境下使用 tree shaking, 需設定 usedExports: true
+  //   usedExports: true,
+  // },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
