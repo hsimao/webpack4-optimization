@@ -1,6 +1,7 @@
 {
   "presets": [
     [
+      // 將 ES6 編譯成 ES5
       "@babel/preset-env",
       {
         "targets": {
