@@ -58,6 +58,12 @@ module.exports = {
       root: path.resolve(__dirname, '../'),
     }),
   ],
+  optimization: {
+    // 代碼分割設定 code splitting
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, '../dist'),
