@@ -1,10 +1,10 @@
 // 同步 import 代碼分割方式
-// import _ from 'lodash'
-// console.log(_.join(['a', 'b', 'c'], '***'))
+import _ from 'lodash'
+console.log(_.join(['a', 'b', 'c'], '***'))
 
 // 異步 import 代碼分割方式
 function getComponent() {
-  return import('lodash').then(({ default: _ }) => {
+  return import(/* webpackChunkName: "lodash" */ 'lodash').then(({ default: _ }) => {
     const element = document.createElement('div')
     element.innerHTML = _.join(['Hsi', 'Mao', '-'])
     return element

@@ -14,5 +14,5 @@
     ]
   ],
   // 異步 import 插件
-  "plugins": ["dynamic-import-webpack"]
+  "plugins": ["@babel/plugin-syntax-dynamic-import"]
 }
