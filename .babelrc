@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "chrome": "67"
+        },
+        // 設定完後，就不用在開發檔案內另外引入 import '@babel/polyfill'
+        "useBuiltIns": "usage"
+      }
+    ]
+  ]
+}
