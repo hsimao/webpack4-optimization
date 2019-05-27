@@ -54,7 +54,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
-    new CleanWebpackPlugin(['../dist']),
+    new CleanWebpackPlugin(['dist'], {
+      root: path.resolve(__dirname, '../'),
+    }),
   ],
   output: {
     filename: '[name].js',
