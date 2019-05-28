@@ -12,5 +12,7 @@
         "useBuiltIns": "usage"
       }
     ]
-  ]
+  ],
+  // 異步 import 插件
+  "plugins": ["@babel/plugin-syntax-dynamic-import"]
 }
