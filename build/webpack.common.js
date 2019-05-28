@@ -64,7 +64,7 @@ module.exports = {
       chunks: 'all',
       minSize: 30000, // 檔案大於 30kb 才會進行代碼分割
       maxSize: 0, // 檔案如果超過此設定大小, 將會嘗試在進行拆分, 如果該檔案無法拆分就跳過, 通常比較少設定, 預設為0
-      minChunks: 1, // 入口文件使用超過 1 次才會進行代碼分割
+      minChunks: 1, // 表示該 import 的文件, 至少要被其他 chunk 檔案(超過1個), 才會另外獨立生成一個chunk
       maxAsyncRequests: 5, // 限制最多分割 5 個檔案, 超過就不在進行分割
       maxInitialRequests: 3, // 整個網頁首頁或入口文件進行加載時, 所 import 的檔案最多分割3個檔案
       automaticNameDelimiter: '~',
