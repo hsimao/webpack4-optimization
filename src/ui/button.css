@@ -1,0 +1,7 @@
+.btn {
+  display: inline-block;
+  border: solid 2px blue;
+  border-radius: 4px;
+  background-color: green;
+  cursor: pointer;
+}

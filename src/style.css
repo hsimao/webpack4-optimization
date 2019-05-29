@@ -1,0 +1,9 @@
+@import './ui/button.css';
+
+body {
+  background-color: blue;
+  min-height: 100vh;
+  margin: 50px;
+  height: 50px;
+  background-color: green;
+}
