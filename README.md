@@ -1,19 +1,36 @@
-# webpack 優化配置 opimization
+# webpack4 - 環境變數配置 dev / prod
 
-## 相關配置詳見各分支
+## 說明
 
-## [Tree Shaking](https://github.com/hsimao/webpack4-optimization/tree/treeShaking/)
+```text
+使用環境變數來判斷使用哪一種配置方式,
+將統一在 webpack.common.js 導出前先利用環境變量判斷該合併哪個配置文件
+```
 
-## [Code Splitting](https://github.com/hsimao/webpack4-optimization/tree/codeSplitting/)
+### 配置 package.json
 
-## [Lazy Loading](https://github.com/hsimao/webpack4-optimization/tree/lazyLoading/)
+```text
+1. 全部統一使用 webpack.common.js
+2. 在線上打包時，設定環境變量，設置production參數(預設為 true)
+```
 
-## [PreFetching / PreLoad](https://github.com/hsimao/webpack4-optimization/tree/prefetching/)
+```json
+"scripts": {
+  "dev-build": "webpack --config ./build/webpack.common.js",
+  "dev": "webpack-dev-server --config ./build/webpack.common.js",
+  "build": "webpack --env.production --config ./build/webpack.common.js"
+},
 
-## [Analyse 打包分析](https://github.com/hsimao/webpack4-optimization/tree/analyse/)
+```
 
-## [CSS 代碼拆分 / 多頁配置](https://github.com/hsimao/webpack4-optimization/tree/cssSplitting)
+### 在導出時接收環境變量，用環境變量來判斷 common 需合併哪隻配置文件
 
-## [Caching 緩存 / contenthsah 配置](https://github.com/hsimao/webpack4-optimization/tree/caching)
-
-## [Shimming 墊片例子配置](https://github.com/hsimao/webpack4-optimization/tree/shimming)
+```js
+module.exports = env => {
+  if (env && env.production) {
+    return merge(commonConfig, prodConfig)
+  } else {
+    return merge(commonConfig, devConfig)
+  }
+}
+```
