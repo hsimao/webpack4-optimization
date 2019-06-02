@@ -2,7 +2,7 @@
   "name": "mars-library-test",
   "version": "1.0.2",
   "description": "",
-  "main": "./dist/library",
+  "main": "./dist/marsLibraryTest.js",
   "scripts": {
     "dev-build": "webpack --config ./build/webpack.dev.js",
     "dev": "webpack-dev-server --config ./build/webpack.dev.js",

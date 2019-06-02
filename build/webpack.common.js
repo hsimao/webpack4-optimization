@@ -55,9 +55,9 @@ module.exports = {
     }),
   ],
   output: {
-    filename: 'library.js',
+    filename: 'marsLibraryTest.js',
     path: path.resolve(__dirname, '../dist'),
-    library: 'libraryTest', // 配置全局變數, 提供使用 script 引入方式
+    library: 'marsLibraryTest', // 配置全局變數, 提供使用 script 引入方式
     libraryTarget: 'umd', // 提供支援 import 跟 require 引入方式
   },
 }
