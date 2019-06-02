@@ -19,3 +19,5 @@
 ## [Shimming 墊片例子配置](https://github.com/hsimao/webpack4-optimization/tree/shimming)
 
 ## [環境變數判斷使用 dev / prod 配置](https://github.com/hsimao/webpack4-optimization/tree/Envionment)
+
+## [插件開發配置](https://github.com/hsimao/webpack4-optimization/tree/Library-build)
