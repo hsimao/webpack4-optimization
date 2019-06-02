@@ -1,1 +1,4 @@
-console.log('123')
+import * as math from './math'
+import * as string from './string'
+
+export { math, string }

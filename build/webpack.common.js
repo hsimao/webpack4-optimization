@@ -1,5 +1,4 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
@@ -51,15 +50,14 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-    }),
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../'),
     }),
   ],
   output: {
-    filename: '[name].js',
+    filename: 'library.js',
     path: path.resolve(__dirname, '../dist'),
+    library: 'libraryTest', // 配置全局變數, 提供使用 script 引入方式
+    libraryTarget: 'umd', // 提供支援 import 跟 require 引入方式
   },
 }
