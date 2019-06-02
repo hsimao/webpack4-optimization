@@ -1,21 +1,46 @@
-# webpack 優化配置 opimization
+# webpack4 - 插件開發配置 Library
 
-## 相關配置詳見各分支
+### output 配置
 
-## [Tree Shaking](https://github.com/hsimao/webpack4-optimization/tree/treeShaking/)
+```js
+output: {
+  filename: 'library.js',
+  path: path.resolve(__dirname, '../dist'),
+  library: 'marsLibrary', // 配置全局變數, 提供使用 script 引入方式
+  libraryTarget: 'umd', // 提供支援 import 跟 require 引入方式
+},
+```
 
-## [Code Splitting](https://github.com/hsimao/webpack4-optimization/tree/codeSplitting/)
+### externals 配置
 
-## [Lazy Loading](https://github.com/hsimao/webpack4-optimization/tree/lazyLoading/)
+如果該插件有引用到第三方插件, 則需要配置 externals 將該插件排除，避免其他使用模塊也引用相同庫時發生衝突
 
-## [PreFetching / PreLoad](https://github.com/hsimao/webpack4-optimization/tree/prefetching/)
+```js
+module.exports = {
+  externals: ['lodash'],
+}
+```
 
-## [Analyse 打包分析](https://github.com/hsimao/webpack4-optimization/tree/analyse/)
+### package.json main 路徑配置
 
-## [CSS 代碼拆分 / 多頁配置](https://github.com/hsimao/webpack4-optimization/tree/cssSplitting)
+```json
+  "main": "./dist/library.js",
+```
 
-## [Caching 緩存 / contenthsah 配置](https://github.com/hsimao/webpack4-optimization/tree/caching)
+### 使用方式
 
-## [Shimming 墊片例子配置](https://github.com/hsimao/webpack4-optimization/tree/shimming)
+1. 安裝
 
-## [環境變數判斷使用 dev / prod 配置](https://github.com/hsimao/webpack4-optimization/tree/Envionment)
+```bash
+npm install mars-library-test -S
+```
+
+2. 引入
+
+```js
+import { math } from 'mars-library-test'
+
+const { math } = require('mars-library-test')
+
+math.add(10, 10)
+```
