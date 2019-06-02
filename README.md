@@ -14,4 +14,6 @@
 
 ## [CSS 代碼拆分 / 多頁配置](https://github.com/hsimao/webpack4-optimization/tree/cssSplitting)
 
-## [Caching 緩存 / contenthsah配置](https://github.com/hsimao/webpack4-optimization/tree/caching)
+## [Caching 緩存 / contenthsah 配置](https://github.com/hsimao/webpack4-optimization/tree/caching)
+
+## [Shimming 墊片例子配置](https://github.com/hsimao/webpack4-optimization/tree/shimming)
