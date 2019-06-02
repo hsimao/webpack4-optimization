@@ -8,8 +8,10 @@
 
 ## [Lazy Loading](https://github.com/hsimao/webpack4-optimization/tree/lazyLoading/)
 
-## [PreFetching/PreLoad](https://github.com/hsimao/webpack4-optimization/tree/prefetching/)
+## [PreFetching / PreLoad](https://github.com/hsimao/webpack4-optimization/tree/prefetching/)
 
 ## [Analyse 打包分析](https://github.com/hsimao/webpack4-optimization/tree/analyse/)
 
-## [CSS 代碼拆分/多頁配置](https://github.com/hsimao/webpack4-optimization/tree/cssSplitting)
+## [CSS 代碼拆分 / 多頁配置](https://github.com/hsimao/webpack4-optimization/tree/cssSplitting)
+
+## [Caching 緩存 / contenthsah配置](https://github.com/hsimao/webpack4-optimization/tree/caching)
