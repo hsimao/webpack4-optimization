@@ -1,1 +1,5 @@
-console.log('123')
+import { ui } from './jquery.ui'
+
+ui()
+
+// console.log(this === window)

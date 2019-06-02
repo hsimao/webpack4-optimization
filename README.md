@@ -1,17 +1,58 @@
-# webpack 優化配置 opimization
+# webpack4 - 墊片 Shimming
 
-## 相關配置詳見各分支
+## 說明
 
-## [Tree Shaking](https://github.com/hsimao/webpack4-optimization/tree/treeShaking/)
+```text
+某些 plugins 模塊會有自己的相依外部插件，但不會直接寫 import 在自己的檔案中,
+都需要使用者自行安裝引入，但因為我們在開發時不可能去改插件的程式碼,
+這時就需要使用 Shimming 的概念，讓 webpack 自動引入
+```
 
-## [Code Splitting](https://github.com/hsimao/webpack4-optimization/tree/codeSplitting/)
+### 以 jquery 為例子，某的 ui 插件需要引用到 jquery
 
-## [Lazy Loading](https://github.com/hsimao/webpack4-optimization/tree/lazyLoading/)
+1. 引入 webpack
 
-## [PreFetching / PreLoad](https://github.com/hsimao/webpack4-optimization/tree/prefetching/)
+```js
+// webpack.common.js
+const webpack = require('webpack')
+```
 
-## [Analyse 打包分析](https://github.com/hsimao/webpack4-optimization/tree/analyse/)
+2. 在 plugins 中新增 webpack.ProvidePlugin
 
-## [CSS 代碼拆分 / 多頁配置](https://github.com/hsimao/webpack4-optimization/tree/cssSplitting)
+```js
+// webpack.common.js
+plugins: [
+  new webpack.ProvidePlugin({
+  $: 'jquery', // 如果有模塊使用到 $ ，就自動引入 jquery
+  }),
+],
+```
 
-## [Caching 緩存 / contenthsah配置](https://github.com/hsimao/webpack4-optimization/tree/caching)
+### 將每個 js 模塊中的 this 指向 window
+
+1. 安裝 imports-loader
+
+```bash
+npm install imports-loader -D
+```
+
+2. 重新配置 js loader
+
+```js
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: [
+        {
+          loader: 'babel-loader',
+        },
+        {
+          loader: 'imports-loader?this=>window',
+        },
+      ],
+    },
+  ]
+}
+```

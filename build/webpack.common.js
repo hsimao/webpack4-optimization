@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -11,14 +12,21 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+          // {
+          //   loader: 'imports-loader?this=>window',
+          // },
+        ],
       },
       {
         test: /\.(jpg|png|gif)$/,
         use: {
           loader: 'url-loader',
           options: {
-            name: '[name]_[hash].[ext]',
+            name: '[name]_[ hash].[ext]',
             outputPath: 'images/',
             limit: 10240,
           },
@@ -56,6 +64,9 @@ module.exports = {
     }),
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../'),
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery', // 如果有模塊使用到 $，就自動引入 jquery
     }),
   ],
   output: {
