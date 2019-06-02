@@ -1,3 +1,3 @@
-import * as math from './math'
+import math from './math.js'
 
 export { math }

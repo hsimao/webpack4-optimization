@@ -1,15 +1,22 @@
-export function add(a, b) {
+function add(a, b) {
   return a + b
 }
 
-export function minus(a, b) {
+function minus(a, b) {
   return a - b
 }
 
-export function multiply(a, b) {
+function multiply(a, b) {
   return a * b
 }
 
-export function division(a, b) {
+function division(a, b) {
   return a / b
+}
+
+export default {
+  add,
+  minus,
+  multiply,
+  division,
 }
