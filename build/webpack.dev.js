@@ -15,6 +15,10 @@ const devConfig = {
   optimization: {
     usedExports: true,
   },
+  output: {
+    filename: '[name].js',
+    chunkFilename: '[name].js',
+  },
 }
 
 module.exports = merge(commonConfig, devConfig)

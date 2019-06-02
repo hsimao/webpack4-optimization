@@ -50,6 +50,15 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    runtimeChunk: {
+      name: 'runtime'
+    },
+    usedExports: true,
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
