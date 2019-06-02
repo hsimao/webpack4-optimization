@@ -60,4 +60,5 @@ module.exports = {
     library: 'marsLibrary', // 配置全局變數, 提供使用 script 引入方式
     libraryTarget: 'umd', // 提供支援 import 跟 require 引入方式
   },
+  externals: ['lodash'], // 將 lodash library 排除，不編譯進去，避免其他使用模塊也引用相同庫時發生衝突
 }
