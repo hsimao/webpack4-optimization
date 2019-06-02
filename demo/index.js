@@ -1,2 +1,1 @@
-// console.dir(marsLibrary.math.add)
-console.log(marsLibrary.math.add(5, 5))
+console.dir(marsLibrary.math.add(5, 5))
