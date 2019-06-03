@@ -21,3 +21,5 @@
 ## [環境變數判斷使用 dev / prod 配置](https://github.com/hsimao/webpack4-optimization/tree/Envionment)
 
 ## [插件開發配置](https://github.com/hsimao/webpack4-optimization/tree/Library-build)
+
+## [打包速度優化配置](https://github.com/hsimao/webpack4-optimization/tree/ImproveBuildSpeed)
